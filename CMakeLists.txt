@@ -18,6 +18,15 @@ if(UNIX AND NOT APPLE)
 elseif(APPLE)
   message("Apple Platform")
   set(CMAKE_PREFIX_PATH "/Users/leonardoneves/Applications/Qt/5.15.1/clang_64")
+elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  if(MINGW)
+    message("MINGW Platform")
+    set(CMAKE_PREFIX_PATH "C:\\Users\\leonardoneves\\Applications\\Qt\\5.15.1\\mingw81_64")
+  elseif(WIN32)
+    message("Windows 32 Platform Visual studio")
+  else()
+    message("Windows I don't know which")
+  endif()
 else()
   message("Other Platform")
 endif()
@@ -42,6 +51,12 @@ add_executable(nice_tile_map
 )
 
 target_link_libraries(nice_tile_map PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+  add_custom_command(TARGET nice_tile_map POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy_directory
+      "${PROJECT_SOURCE_DIR}/libs/win64"
+      $<TARGET_FILE_DIR:nice_tile_map>)
+endif()
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
