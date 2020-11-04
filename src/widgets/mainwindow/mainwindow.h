@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef SRC_WIDGETS_MAINWINDOW_MAINWINDOW_H_
+#define SRC_WIDGETS_MAINWINDOW_MAINWINDOW_H_
 
 #include <QMainWindow>
 
@@ -7,15 +7,14 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
-public:
-    MainWindow(QWidget *parent = nullptr);
+ public:
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private:
+ private:
     Ui::MainWindow *ui;
 };
-#endif // MAINWINDOW_H
+#endif  // SRC_WIDGETS_MAINWINDOW_MAINWINDOW_H_
