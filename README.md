@@ -24,11 +24,6 @@ Install MinGw-64 for windows
         -G "MinGW Makefiles"
 ```
 
-#### In windows put this libraries in path
-- C:\Users\leonardoneves\Applications\Qt\5.15.1\mingw81_64\bin
-- C:\Users\leonardoneves\Applications\Qt\5.15.1\mingw81_64\lib
-- 
-
 ### How to distribution
 
 #### For Windows
