@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.5)
 project(nice_tile_map LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 if(UNIX AND NOT APPLE)
   message("Linux Platform")
   set(CMAKE_PREFIX_PATH "/home/leonardoneves/Qt/5.15.1/gcc_64")
@@ -23,6 +23,12 @@ elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
 else()
   message("Other Platform")
 endif()
+
+# Set path to custom CMAKE scripts
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
+
+# Include Qt deployment helper function
+include(windeployqt)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Qml Quick LinguistTools REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Qml Quick LinguistTools REQUIRED)

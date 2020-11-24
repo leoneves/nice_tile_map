@@ -32,13 +32,15 @@ target_link_libraries(nice_tile_map
     Qt${QT_VERSION_MAJOR}::Quick
     )
 
+qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+
+windeployqt(nice_tile_map)
+
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
     add_custom_command(TARGET nice_tile_map POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         "${PROJECT_SOURCE_DIR}/libs/win64"
         $<TARGET_FILE_DIR:nice_tile_map>)
 endif()
-
-qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 message("QT Version: " ${QT_VERSION_MAJOR})
