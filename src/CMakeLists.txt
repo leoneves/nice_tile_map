@@ -34,7 +34,9 @@ target_link_libraries(nice_tile_map
 
 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
-windeployqt(nice_tile_map)
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
+    windeployqt(nice_tile_map)
+endif()
 
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
     add_custom_command(TARGET nice_tile_map POST_BUILD
