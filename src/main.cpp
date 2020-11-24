@@ -1,11 +1,12 @@
-#include "src/widgets/mainwindow/mainwindow.h"
-
 #include <QApplication>
+#include <QQmlApplicationEngine>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
-    return a.exec();
+  QApplication app(argc, argv);
+
+  QQmlApplicationEngine engine;
+  engine.load(QUrl(QStringLiteral("qrc:app/qml/main.qml")));
+
+  return app.exec();
 }

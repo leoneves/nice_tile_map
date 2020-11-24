@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="nice_tile_map_pt_BR">
+<TS version="2.1" language="pt_BR" sourcelanguage="en">
 <context>
-    <name>MainWindow</name>
+    <name>main</name>
     <message>
-        <location filename="mainwindow.ui" line="14"/>
-        <location filename="cmake-build-debug/nice_tile_map_autogen/include/ui_mainwindow.h" line="51"/>
-        <source>Nice Tile Map</source>
-        <translation type="unfinished"></translation>
+        <location filename="../app/qml/main.qml" line="14"/>
+        <source>Main Window</source>
+        <translation>Janela Pricipal</translation>
     </message>
 </context>
 </TS>
