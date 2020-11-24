@@ -1,6 +1,18 @@
 ## nice_tile_map
 
 ### How to develop:
+#### How to run lint:
+1. Install lint
+```
+    pip install --upgrade pip
+    pip install pipenv
+    python3 -m pipenv install
+    python3 -m cpplint --recursive src/
+```
+2. In Clion set Editor -> Code Style -> C/C++ -> Header Guard Style:
+```
+    ${PROJECT_REL_PATH}_${FILE_NAME}_${EXT}_
+```
 
 
 ### How to Run:
