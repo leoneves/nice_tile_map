@@ -6,8 +6,8 @@
 ```
     pip install --upgrade pip
     pip install pipenv
-    python3 -m pipenv install
-    python3 -m cpplint --recursive src/
+    python3 -m pipenv install --dev [or python -m pipenv install --dev ]
+    python3 -m cpplint --recursive src/ [or python -m cpplint --recursive src/ ]
 ```
 2. In Clion set Editor -> Code Style -> C/C++ -> Header Guard Style:
 ```
